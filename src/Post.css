@@ -95,3 +95,21 @@
   button[type='submit']:hover {
     background-color: #7A76D4;
   }
+
+  @media (max-width: 480px) {
+    .posts-center-text {
+      font-size: 2rem;
+    }
+
+    .posts-form {
+      padding: 20px;
+    }
+
+    .posts-form label {
+      font-size: 1rem;
+    }
+
+    button[type='submit'] {
+      font-size: 1rem;
+    }
+  }

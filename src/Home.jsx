@@ -1,20 +1,34 @@
-import "./Home.css"
+import "./Home.css";
 import Jobs from "./Jobs";
+import { motion } from "framer-motion";
 
-function Home(){
-    return(
-        <>
-        <section className="Home">
+function Home() {
+  return (
+    <>
+      <section className="Home">
         <div className="content">
-        <div className="main-text">
-            <h1>FIND YOUR DREAM <br></br> JOB <br></br>WITH EASE</h1>
+          <motion.div 
+            className="main-text"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h1>FIND YOUR DREAM <br /> JOB <br /> WITH EASE</h1>
+          </motion.div>
         </div>
-        </div>
-        </section>
-        <section className="jobs">
-            <Jobs />
-        </section>
-        </>
-    );
+      </section>
+
+      <motion.section 
+        className="jobs"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <Jobs />
+      </motion.section>
+    </>
+  );
 }
-export default Home
+
+export default Home;
