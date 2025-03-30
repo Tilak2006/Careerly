@@ -1,0 +1,45 @@
+[
+    {
+      "postId": 1,
+      "postProfile": "Software Engineer",
+      "postDesc": "Design, build, and maintain efficient, reusable, and reliable code.",
+      "reqExperience": "2",
+      "postTechStack": ["React", "Node.js", "AWS"]
+    },
+    {
+      "postId": 2,
+      "postProfile": "Backend Developer",
+      "postDesc": "Develop scalable backend APIs and optimize server performance.",
+      "reqExperience": "3",
+      "postTechStack": ["Spring Boot", "MySQL", "Docker"]
+    },
+    {
+      "postId": 3,
+      "postProfile": "Data Analyst",
+      "postDesc": "Analyze large datasets and create visual reports to provide insights.",
+      "reqExperience": "1",
+      "postTechStack": ["Python", "Pandas", "Power BI"]
+    },
+    {
+      "postId": 4,
+      "postProfile": "DevOps Engineer",
+      "postDesc": "Manage infrastructure, automate deployment pipelines, and monitor systems.",
+      "reqExperience": "4",
+      "postTechStack": ["Kubernetes", "AWS", "Jenkins"]
+    },
+    {
+      "postId": 5,
+      "postProfile": "AI/ML Engineer",
+      "postDesc": "Build and deploy machine learning models for predictive analytics.",
+      "reqExperience": "3",
+      "postTechStack": ["Python", "TensorFlow", "PyTorch"]
+    },
+    {
+      "postId": 6,
+      "postProfile": "Full Stack Developer",
+      "postDesc": "Develop end-to-end web applications with robust backend APIs.",
+      "reqExperience": "2",
+      "postTechStack": ["React", "Spring Boot", "MongoDB", "Docker"]
+    }
+  ]
+  

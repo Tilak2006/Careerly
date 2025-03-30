@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Jobs.css';
 import { FiExternalLink } from 'react-icons/fi';
+import mockJobs from './mockJobs.json';
 import axios from 'axios';
 
 const Jobs = ({ searchQuery }) => {
@@ -17,10 +18,11 @@ const Jobs = ({ searchQuery }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get(API_URL);
+        const response = await axios.get('http://localhost:8080/api/jobs');
         setJobs(response.data);
       } catch (error) {
-        console.error('Failed to fetch jobs:', error);
+        console.error('API failed, using mock data:', error);
+        setJobs(mockJobs);
       }
     };
     fetchJobs();
