@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Post.css';
+import axios from 'axios';
+
 
 const Post = () => {
   const [postId, setPostId] = useState('');
@@ -14,9 +16,27 @@ const Post = () => {
     setTechStack(selectedOptions);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Job Posted!\nPost ID: ${postId}\nProfile: ${postProfile}\nDescription: ${postDescription}\nTech Stack: ${techStack.join(', ')}`);
+    const jobData = {
+      postProfile,
+      postDescription,
+      postTechStack: techStack,
+    };
+  
+    try {
+      const response = await axios.post('http://localhost:8080/api/jobs', jobData);
+      alert(`Job Posted Successfully! Post ID: ${response.data.postId}`);
+      console.log('Response:', response.data);
+  
+      // Clear Form
+      setPostProfile('');
+      setPostDescription('');
+      setTechStack([]);
+    } catch (error) {
+      console.error('Error posting job:', error.response?.data || error.message);
+      alert('Failed to post job. Please check console for details.');
+    }
   };
 
   return (
@@ -24,14 +44,6 @@ const Post = () => {
       <div className="posts-page">
         <h1 className="posts-center-text">Post Job</h1>
         <form className="posts-form" onSubmit={handleSubmit}>
-          <label>Post ID</label>
-          <input
-            type="text"
-            value={postId}
-            onChange={(e) => setPostId(e.target.value)}
-            placeholder="Enter Post ID"
-            required
-          />
 
           <label>Post Profile</label>
           <input
