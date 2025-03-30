@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 
-function Navbar() {
+function Navbar( {searchQuery, setSearchQuery }){
     return (
         <>
             <nav className="navbar">
@@ -14,7 +14,7 @@ function Navbar() {
                         <li><Link to="/post">POST</Link></li>
                         <li>
                         <div className="search-container">
-                            <input type="search" placeholder="search"></input>
+                            <input type="search" placeholder="search" onChange={(e) => setSearchQuery(e.target.value)}></input>
                             <i className="fa fa-search"></i>
                             </div>
                             </li>

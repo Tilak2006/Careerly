@@ -5,17 +5,19 @@ import Home from './Home'
 import Jobs from './Jobs'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Post from './Post'
+import Footer from './Footer'
 
 function App() {
-
+  const [searchQuery, setSearchQuery] = useState('');
   return (
     <Router>
-      <Navbar />
+      <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <Routes>
         <Route path="/" element = {<Home />}/>
-        <Route path="/jobs" element = {<Jobs />}/>
+        <Route path="/jobs" element={<Jobs searchQuery={searchQuery} />} />
         <Route path="/post" element = {<Post />}/>
       </Routes>
+      <Footer />
     </Router>
   );
 }

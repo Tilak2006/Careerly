@@ -1,0 +1,97 @@
+.posts-page {
+    background-color: white;
+    color: #1e1e1e;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    min-height: 100vh;
+  }
+  
+  .posts-center-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .posts-form {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    color: #8F87F1;
+  }
+  
+  .posts-form label {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .posts-form input,
+  .posts-form textarea {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .posts-form textarea {
+    resize: none;
+    height: 120px;
+  }
+  
+  .posts-techstack {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    height: 88px;
+    overflow-y: auto;
+    background-color: #3a3a3a;
+    color: #8F87F1;
+  }
+  .posts-techstack::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .posts-techstack::-webkit-scrollbar-track {
+    background: #2C2C2C;
+    border-radius: 10px;
+  }
+  
+  .posts-techstack::-webkit-scrollbar-thumb {
+    background-color: #8F87F1;
+    border-radius: 10px;
+  }
+  
+  
+  .posts-techstack-item {
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .posts-techstack-item input {
+    margin-right: 8px;
+  }
+  
+  button[type='submit'] {
+    background-color: #8F87F1;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type='submit']:hover {
+    background-color: #7A76D4;
+  }

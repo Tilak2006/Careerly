@@ -63,4 +63,15 @@
     gap: 10px;
     display: inline-block;
   }
-  
+  .apply-now{
+    text-decoration: none;
+    color: #8F87F1;
+    background-color: #3c3c3c;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .apply-now svg {
+    gap: 10px;
+    width: 20px; 
+    height: 16px;
+  }
