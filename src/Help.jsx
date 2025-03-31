@@ -8,7 +8,6 @@ function Help() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Email logic goes here (could use an API, service, or SMTP server)
     setShowAlert(true);
     setEmail('');
     setMessage('');
