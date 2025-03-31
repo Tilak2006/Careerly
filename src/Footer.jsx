@@ -2,8 +2,7 @@ import React from "react";
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { BiNotepad } from "react-icons/bi"; // Import a notes-related icon
 
-import { SiLeetcode, SiRedis } from "react-icons/si";
-import { Link } from "react-router-dom";
+import { SiLeetcode } from "react-icons/si";
 import "./Footer.css";
 
 const Footer = () => {
