@@ -1,9 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&family=League+Spartan:wght@100..900&display=swap');
+
 .jobs-page {
     background-color: white;
     padding: 20px;
     min-height: 100vh;
     margin-top: 50px;
+    font-family: "League Spartan";
   }
   
   .jobs-center-text {

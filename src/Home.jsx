@@ -1,8 +1,9 @@
 import "./Home.css";
 import Jobs from "./Jobs";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
-function Home() {
+function Home({isHiring} ) {
   return (
     <>
       <section className="Home">

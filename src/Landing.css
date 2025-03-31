@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&family=League+Spartan:wght@100..900&display=swap');
+
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: "League Spartan";
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #1e1e1e;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .button-group button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: #8F87F1;
+    background-color: #1e1e1e;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .button-group button:hover {
+    background-color: #3c3c3c;
+  }
+  

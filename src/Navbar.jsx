@@ -5,6 +5,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 function Navbar({ searchQuery, setSearchQuery }) {
   const [isOpen, setIsOpen] = useState(false);
+  const isHiring = JSON.parse(localStorage.getItem('isHiring'));
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,7 +21,10 @@ function Navbar({ searchQuery, setSearchQuery }) {
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           <li><Link to="/" onClick={() => setIsOpen(false)}>HOME</Link></li>
           <li><Link to="/jobs" onClick={() => setIsOpen(false)}>JOBS</Link></li>
-          <li><Link to="/post" onClick={() => setIsOpen(false)}>POST</Link></li>
+          
+          {isHiring && (
+            <li><Link to="/post" onClick={() => setIsOpen(false)}>POST</Link></li>
+          )}
           <li>
             <div className="search-container">
               <input 
