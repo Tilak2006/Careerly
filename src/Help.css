@@ -1,0 +1,138 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  .help-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+
+  .help-container {
+    background-color: #2c2c2c;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+  }
+  
+  .help-heading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+
+  
+  .help-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .help-label {
+    font-size: 1rem;
+    color: #8F87F1;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .help-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #2c2c2c;
+    border-radius: 8px;
+    background-color: #3c3c3c;
+    color: #8F87F1;
+  }
+  
+  .help-input:focus {
+    border-color: #8F87F1;
+    outline: none;
+  }
+  
+  .help-btn {
+    background-color: #8F87F1;
+    color: #2c2c2c;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .help-btn:hover {
+    background-color: #7A76D4;
+  }
+  
+ 
+  .help-input,
+  textarea {
+    resize: none; 
+  }
+
+  .alert-message {
+    background-color: #8F87F1;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1rem;
+    display: inline-block;
+  }
+  
+  .alert-message p {
+    margin: 0;
+  }
+  
+
+  @media (max-width: 768px) {
+    .help-container {
+      padding: 30px;
+    }
+  
+    .help-heading {
+      font-size: 1.6rem;
+    }
+  
+    .help-input {
+      padding: 10px;
+    }
+  
+    .help-btn {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .help-page {
+      padding: 10px;
+    }
+  
+    .help-container {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .help-heading {
+      font-size: 1.4rem;
+    }
+  
+    .help-btn {
+      width: 100%;
+    }
+  }
+  

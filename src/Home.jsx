@@ -35,12 +35,13 @@ function Home({ isHiring }) {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Link to="/dashboard" className="dropdown-item"> {/* Dashboard Link */}
-                            <FiGrid /> Dashboard
+                        <Link to="/dashboard" className="dropdown-item">
+                            <FiGrid /> DASHBOARD
                         </Link>
-                        <Link to="/login" className="dropdown-item"><FiLogIn /> Login</Link>
+                        <Link to="/login" className="dropdown-item"><FiLogIn /> LOGIN</Link>
+                        <Link to="/help" className="dropdown-item"><FiLogIn /> HELP</Link>
                         <button onClick={toggleDarkMode} className="dropdown-item">
-                            {darkMode ? <FiSun /> : <FiMoon />} {darkMode ? "Light Mode" : "Dark Mode"}
+                            {darkMode ? <FiSun /> : <FiMoon />} {darkMode ? "Light Mode" : "DARK MODE"}
                         </button>
                     </motion.div>
                 )}

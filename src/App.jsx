@@ -9,6 +9,9 @@ import Footer from './Footer'
 import Landing from './Landing'
 import Saved from './Saved'
 import Dashboard from './Dashboard'
+import About from './About'
+import Login from './Login'
+import Help from './Help'
 
 function App() {
   const isHiring = JSON.parse(localStorage.getItem('isHiring'));
@@ -27,6 +30,9 @@ function App() {
               <Route path="/post" element={isHiring ? <Post /> : <h1>Verification system to be added soon</h1>} />
               <Route path="/saved" element={<Saved searchQuery={searchQuery} />} />
               <Route path="/dashboard" element={<Dashboard isHiring={isHiring} />} />
+              <Route path="/about" element={<About isHiring={isHiring} />} />
+              <Route path="/login" element={<Login isHiring={isHiring} />} />
+              <Route path="/help" element={<Help isHiring={isHiring} />} />
 
             </Routes>
             <Footer />

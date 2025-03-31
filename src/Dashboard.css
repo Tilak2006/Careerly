@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&family=League+Spartan:wght@100..900&display=swap');
+
+
 .dashboard {
     display: flex;
     height: 100vh;
     background-color: #ffffff;
     color: #fff;
+    font-family: "League Spartan";
   }
   
   .sidebar {
@@ -12,6 +16,8 @@
     display: flex;
     flex-direction: column;
     transition: width 0.3s ease;
+    font-family: "League Spartan";
+
   }
   
   .sidebar.collapsed {
