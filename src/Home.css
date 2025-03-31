@@ -13,11 +13,14 @@
   align-items: center;
   height: 80vh;
   text-align: center;
+  position: relative;
 }
 
 .main-text {
   font-size: 3rem;
   font-weight: 300;
+  width: 100%;
+  padding: 0;
 }
 
 .scroll-button {
@@ -38,7 +41,7 @@
 
 .profile-section {
   position: absolute;
-  top: 90px;
+  top: 20px;
   right: 20px;
   cursor: pointer;
   z-index: 100;
@@ -103,21 +106,28 @@ body.dark-mode {
 }
 
 @media (max-width: 768px) {
-  .profile-icon {
-    font-size: 32px;
-    padding: 12px;
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+      padding-top: 0; 
+    }
+    
+    .main-text {
+      font-size: 2rem;
+      text-align: center; 
+    }
+    
+    .profile-icon {
+      font-size: 32px;
+      padding: 12px;
+    }
+    .profile-section {
+        top: 90px; 
+      }
+    
+    .dropdown-menu {
+      width: 180px;
+    }
   }
-  .dropdown-menu {
-    width: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-icon {
-    font-size: 28px;
-    padding: 10px;
-  }
-  .dropdown-menu {
-    width: 160px;
-  }
-}

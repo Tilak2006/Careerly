@@ -114,9 +114,6 @@
       display: block;
     }
   
-    .content {
-      margin-left: 70px;
-    }
   
     .sidebar.expanded ~ .content {
       margin-left: 250px;
