@@ -13,7 +13,6 @@ import About from './About'
 import Login from './Login'
 import Help from './Help'
 import Compare from './Compare'
-import mockJobs from './mockJobs.json'; 
 
 function App() {
   const isHiring = JSON.parse(localStorage.getItem('isHiring'));
@@ -22,9 +21,9 @@ function App() {
   const handleSelectJob = (job) => {
     setSelectedJobs((prevSelectedJobs) => {
         if (prevSelectedJobs.includes(job)) {
-            return prevSelectedJobs.filter((selectedJob) => selectedJob !== job);  // Remove if already selected
+            return prevSelectedJobs.filter((selectedJob) => selectedJob !== job);
         } else {
-            return [...prevSelectedJobs, job];  // Add if not selected
+            return [...prevSelectedJobs, job];  
         }
     });
 };

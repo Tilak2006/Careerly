@@ -11,7 +11,7 @@ const Compare = ({ jobs }) => {
               <h4>{job.postProfile}</h4>
               <p><strong>Job ID:</strong> {job.postId}</p>
               <p><strong>Description:</strong> {job.postDesc}</p>
-              {/* Render more job details as needed */}
+              
             </div>
           ))}
         </div>
