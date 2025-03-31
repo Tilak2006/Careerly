@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;700&display=swap');
+
 
 * {
     margin: 0;
@@ -13,7 +14,7 @@
     align-items: center;
     height: 100vh;
     background-color: #f4f7fc;
-    font-family: "League Spartan", sans-serif;
+    font-family: "Geologica", sans-serif;
   }
   
   .login-container {

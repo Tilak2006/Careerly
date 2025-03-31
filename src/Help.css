@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;700&display=swap');
 
 * {
     margin: 0;
@@ -12,7 +13,7 @@
     align-items: center;
     height: 100vh;
     background-color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Geologica", sans-serif;
   }
   
 
