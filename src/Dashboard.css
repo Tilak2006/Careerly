@@ -122,3 +122,131 @@
         display: none;
       }
   }
+
+  .user-profile-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .profile-layout {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-pic-container {
+    position: relative;
+  }
+  
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .default-profile-icon {
+    font-size: 100px;
+    color: #aaa;
+  }
+  
+  .upload-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8F87F1;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .share-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .profile-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    vertical-align: gap;
+  }
+  
+
+  .profile-input, .profile-select, .profile-textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e0e0e0;
+    font-size: 16px;
+  }
+  
+  .profile-textarea {
+    min-height: 150px;
+  }
+  
+  .user-id {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-layout {
+      flex-direction: column;
+    }
+    
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .default-profile-icon {
+      font-size: 70px;
+    }
+  }
+
+  
