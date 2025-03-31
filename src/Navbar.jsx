@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX , FiSearch} from "react-icons/fi";
 
 function Navbar({ searchQuery, setSearchQuery }) {
+  const [showSearch, setShowSearch] = useState(false);
+  const handleIconClick = () => {
+    setShowSearch(true);
+  };
+
+  const handleBlur = () => {
+    setShowSearch(false);
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const isHiring = JSON.parse(localStorage.getItem('isHiring'));
 
@@ -25,17 +34,24 @@ function Navbar({ searchQuery, setSearchQuery }) {
           {isHiring && (
             <li><Link to="/post" onClick={() => setIsOpen(false)}>POST</Link></li>
           )}
+           <li><Link to="/saved" onClick={() => setIsOpen(false)}>SAVED</Link></li>
           <li>
             <div className="search-container">
-              <input 
-                type="search" 
-                placeholder="search" 
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <i className="fa fa-search"></i>
-            </div>
+      {showSearch ? (
+        <input
+          type="search"
+          placeholder="Search..."
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onBlur={handleBlur}
+          autoFocus
+        />
+      ) : (
+        <FiSearch size={22} className="search-icon" onClick={handleIconClick} />
+      )}
+    </div>
           </li>
         </ul>
+        
       </nav>
     </>
   );

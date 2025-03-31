@@ -88,23 +88,25 @@
     position: relative;
     display: flex;
     align-items: center;
-}
-
-.search-container input {
-    width: 180px;
-    padding: 10px 40px 10px 15px; 
-    border: 1px solid #1e1e1e;
-    border-radius: 13px;
-    background: white;
-    color: black;
+  }
+  
+  .search-icon {
+    color: #8F87F1;
+    cursor: pointer;
+  }
+  
+  input[type="search"] {
+    width: 200px;
+    padding: 4px;
+    border: 2px solid #8F87F1;
+    border-radius: 8px;
     outline: none;
-    background-image: url('./assets/Search.png'); 
-    background-size: 18px; 
-    background-repeat: no-repeat;
-    background-position: right 10px center; 
-}
-
-.search-container input::placeholder {
-    color: #1e1e1e;
-}
+    transition: width 0.3s ease;
+  }
+  
+  @media (max-width: 480px) {
+    input[type="search"] {
+      width: 150px;
+    }
+  }
 

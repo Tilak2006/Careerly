@@ -1,0 +1,116 @@
+.saved-page {
+    background-color: white;
+    padding: 20px;
+    min-height: 100vh;
+    margin-top: 50px;
+    font-family: "League Spartan", sans-serif;
+  }
+  
+  .saved-center-text {
+    color: #1e1e1e;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .saved-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .saved-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .saved-card {
+    position: relative;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(59, 59, 59, 0.612);
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .saved-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .saved-card h3 {
+    color: #8F87F1;
+  }
+  
+  .saved-card p {
+    margin: 8px 0;
+  }
+  
+  .saved-tech-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .saved-tech-item {
+    background-color: black;
+    color: #8F87F1;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+  .apply-now {
+    text-decoration: none;
+    color: #8F87F1;
+    background-color: #3c3c3c;
+    padding: 5px;
+    border-radius: 6px;
+    transition: 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .apply-now:hover {
+    transform: scale(1.1);
+  }
+  
+  .apply-now svg {
+    width: 20px;
+    height: 16px;
+  }
+  
+  .remove-job {
+    text-decoration: none;
+    color: #8F87F1;
+    background-color: #3c3c3c;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .remove-job:hover {
+    transform: scale(1.1);
+  }
+  
+  .twobuttons {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .no-saved-jobs {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Post from './Post'
 import Footer from './Footer'
 import Landing from './Landing'
+import Saved from './Saved'
 
 function App() {
   const isHiring = JSON.parse(localStorage.getItem('isHiring'));
@@ -22,7 +23,9 @@ function App() {
             <Routes>
               <Route path="/home" element={<Home isHiring={isHiring} />} />
               <Route path="/jobs" element={<Jobs searchQuery={searchQuery} />} />
-              <Route path="/post" element={isHiring ? <Post /> : <Home isHiring={isHiring} />} />
+              <Route path="/post" element={isHiring ? <Post /> : <h1>Verification system to be added soon</h1>} />
+              <Route path="/saved" element={<Saved searchQuery={searchQuery} />} />
+
             </Routes>
             <Footer />
           </>
