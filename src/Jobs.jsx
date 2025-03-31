@@ -5,6 +5,7 @@ import mockJobs from './mockJobs.json';
 import axios from 'axios';
 
 const Jobs = ({ searchQuery, onClick }) => {
+    const [selectedJobs, setSelectedJobs] = useState([]);
     const [jobs, setJobs] = useState([]);
     const isHiring = useMemo(() => JSON.parse(localStorage.getItem('isHiring') || 'false'), []);
     const API_URL = 'http://localhost:8080/api/jobs';
@@ -47,6 +48,16 @@ const Jobs = ({ searchQuery, onClick }) => {
         }
     }, [API_URL, isHiring]);
 
+    const handleSelectJob = (job) => {
+        setSelectedJobs((prevSelectedJobs) => {
+            if (prevSelectedJobs.some((selectedJob) => selectedJob.postId === job.postId)) {
+                return prevSelectedJobs.filter((selectedJob) => selectedJob.postId !== job.postId);
+            } else {
+                return [...prevSelectedJobs, job];
+            }
+        });
+    };
+
     const handleSaveJob = useCallback((job) => {
         try {
             const savedJobIds = JSON.parse(localStorage.getItem('savedJobs') || '[]');
@@ -85,41 +96,61 @@ const Jobs = ({ searchQuery, onClick }) => {
             job.postTechStack?.some(tech => tech?.toLowerCase().includes(trimmedSearchQuery))
         );
     }, [searchQuery, jobs]);
-
+    const handleCompare = () => {
+        navigate('/compare');
+    };
     return (
         <div className="jobs-page">
-            <h1 className="jobs-center-text">JOBS</h1>
-            {alertMessage && <div className="job-alert">{alertMessage}</div>}
-            <div className="jobs-container">
-                <div className="jobs-grid">
-                    {filteredJobs.map((job) => (
-                        <div className="jobs-card" key={job.postId}>
-                            <h3>{job.postProfile}</h3>
-                            <p><strong>Job-Id:</strong> {job.postId}</p>
-                            <p><strong>Description:</strong> {job.postDesc}</p>
-                            <p><strong>Experience Required:</strong> {job.reqExperience} years</p>
-                            <p><strong>Tech Stack Required:</strong></p>
-                            <ul className="jobs-tech-list">
-                                {job.postTechStack.map((tech, idx) => (
-                                    <li className="jobs-tech-item" key={idx}>{tech}</li>
-                                ))}
-                            </ul>
-                            <div className='twobuttons'>
-                                <a href="https://www.linkedin.com/jobs/" className="apply-now" aria-label={`Apply to ${job.postProfile} on LinkedIn`}>Apply Now <FiExternalLink /></a>
-                                {isHiring && (
-                                    <button onClick={() => handleDelete(job.postId)} className="delete-job">
-                                        Delete Job
-                                    </button>
-                                )}
-                                <button onClick={() => handleSaveJob(job)} className="save-button" aria-label={`Save ${job.postProfile} to your bookmarks`}>
-                                    <FiBookmark size={20} />
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+    <h1 className="jobs-center-text">JOBS</h1>
+    {alertMessage && <div className="job-alert">{alertMessage}</div>}
+    <div className="jobs-container">
+        <div className="jobs-grid">
+            {filteredJobs.map((job) => (
+                <div className="jobs-card" key={job.postId}>
+                    <h3>{job.postProfile}</h3>
+                    <p><strong>Job-Id:</strong> {job.postId}</p>
+                    <p><strong>Description:</strong> {job.postDesc}</p>
+                    <p><strong>Experience Required:</strong> {job.reqExperience} years</p>
+                    <p><strong>Tech Stack Required:</strong></p>
+                    <ul className="jobs-tech-list">
+                        {job.postTechStack.map((tech, idx) => (
+                            <li className="jobs-tech-item" key={idx}>{tech}</li>
+                        ))}
+                    </ul>
+                    <div className='twobuttons'>
+                        <a href="https://www.linkedin.com/jobs/" className="apply-now" aria-label={`Apply to ${job.postProfile} on LinkedIn`}>
+                            Apply Now <FiExternalLink />
+                        </a>
+                        {isHiring && (
+                            <button onClick={() => handleDelete(job.postId)} className="delete-job">
+                                Delete Job
+                            </button>
+                        )}
+                        <button onClick={() => handleSaveJob(job)} className="save-button" aria-label={`Save ${job.postProfile} to your bookmarks`}>
+                            <FiBookmark size={20} />
+                        </button>
+                        <input
+                            type="checkbox"
+                            onChange={() => handleSelectJob(job)}
+                            id={`compare-${job.postId}`}
+                        />
+                        <label htmlFor={`compare-${job.postId}`}></label>
+                    </div>
                 </div>
-            </div>
+            ))}
         </div>
+        <div className="compare-section">
+            <button
+                className="compare-button"
+                onClick={handleCompare}  
+                disabled={selectedJobs.length === 0}
+            >
+                Compare Selected Jobs
+            </button>
+        </div>
+    </div>
+</div>
+
     );
 };
 

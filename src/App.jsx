@@ -12,9 +12,23 @@ import Dashboard from './Dashboard'
 import About from './About'
 import Login from './Login'
 import Help from './Help'
+import Compare from './Compare'
+import mockJobs from './mockJobs.json'; 
 
 function App() {
   const isHiring = JSON.parse(localStorage.getItem('isHiring'));
+  const [selectedJobs, setSelectedJobs] = useState([]);
+
+  const handleSelectJob = (job) => {
+    setSelectedJobs((prevSelectedJobs) => {
+        if (prevSelectedJobs.includes(job)) {
+            return prevSelectedJobs.filter((selectedJob) => selectedJob !== job);  // Remove if already selected
+        } else {
+            return [...prevSelectedJobs, job];  // Add if not selected
+        }
+    });
+};
+
   const [searchQuery, setSearchQuery] = useState('');
   return (
     <Router>
@@ -26,13 +40,18 @@ function App() {
             <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <Routes>
               <Route path="/home" element={<Home isHiring={isHiring} />} />
-              <Route path="/jobs" element={<Jobs searchQuery={searchQuery} />} />
+              <Route 
+                path="/jobs" 
+                element={<Jobs searchQuery={searchQuery} onSelectJob={handleSelectJob} />} 
+              />
               <Route path="/post" element={isHiring ? <Post /> : <h1>Verification system to be added soon</h1>} />
               <Route path="/saved" element={<Saved searchQuery={searchQuery} />} />
               <Route path="/dashboard" element={<Dashboard isHiring={isHiring} />} />
               <Route path="/about" element={<About isHiring={isHiring} />} />
               <Route path="/login" element={<Login isHiring={isHiring} />} />
               <Route path="/help" element={<Help isHiring={isHiring} />} />
+              <Route path="/compare" element={<Compare jobs={selectedJobs} />} />
+
 
             </Routes>
             <Footer />

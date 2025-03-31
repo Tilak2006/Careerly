@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import "./Home.css";
 import Jobs from "./Jobs";
 import { motion } from "framer-motion";
-import { Link, Route, Routes, useNavigate } from 'react-router-dom'; // Import necessary components
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'; 
 import { FiUser, FiSun, FiMoon, FiLogIn, FiGrid } from "react-icons/fi";
 import Dashboard from "./Dashboard";
 
@@ -40,6 +40,7 @@ function Home({ isHiring }) {
                         </Link>
                         <Link to="/login" className="dropdown-item"><FiLogIn /> LOGIN</Link>
                         <Link to="/help" className="dropdown-item"><FiLogIn /> HELP</Link>
+                        <Link to="/compare" className="dropdown-item"><FiLogIn /> COMPARE</Link>
                         <button onClick={toggleDarkMode} className="dropdown-item">
                             {darkMode ? <FiSun /> : <FiMoon />} {darkMode ? "Light Mode" : "DARK MODE"}
                         </button>
