@@ -25,13 +25,13 @@
     padding: 15px 30px;
     font-size: 1rem;
     color: #8F87F1;
-    background-color: #1e1e1e;
+    background-color: #2c2c2c;
     border: none;
     cursor: pointer;
     border-radius: 8px;
   }
   
   .button-group button:hover {
-    background-color: #3c3c3c;
+    background-color: black;
   }
   

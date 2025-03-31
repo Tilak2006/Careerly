@@ -14,10 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Landing Page without Navbar and Footer */}
         <Route path="/" element={<Landing />} />
 
-        {/* Main Pages with Navbar and Footer */}
         <Route path="/*" element={
           <>
             <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
