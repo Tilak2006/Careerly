@@ -28,7 +28,7 @@ function Navbar({ searchQuery, setSearchQuery }) {
           {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </div>
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <li><Link to="/" onClick={() => setIsOpen(false)}>HOME</Link></li>
+          <li><Link to="/home" onClick={() => setIsOpen(false)}>HOME</Link></li>
           <li><Link to="/jobs" onClick={() => setIsOpen(false)}>JOBS</Link></li>
           
           {isHiring && (

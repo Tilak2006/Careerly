@@ -163,6 +163,9 @@ const Dashboard = () => {
               className="profile-input"
             />
           </div>
+          <div className='jobviews'>
+
+          </div>
         </div>
       </div>
     </div>

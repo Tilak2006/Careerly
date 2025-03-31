@@ -11,6 +11,8 @@ function Home({ isHiring }) {
     const [darkMode, setDarkMode] = useState(false);
     const navigate = useNavigate();
 
+    
+
     const scrollToJobs = useCallback(() => {
         const jobsSection = document.getElementById("jobs-section");
         if (jobsSection) {
