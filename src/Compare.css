@@ -1,75 +1,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;700&display=swap');
 
-.compare-container {
+.comparison-container {
   background-color: white;
   padding: 20px;
-  min-height: 100vh;
+  margin: 20px auto;
+  max-width: 1200px;
   font-family: "Geologica", sans-serif;
 }
 
-h2 {
+.comparison-container h2 {
   color: #1e1e1e;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.comparison-table {
+  overflow-x: auto;
+  margin-top: 20px;
   margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.no-jobs {
-  color: #8F87F1;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.compare-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.compare-card {
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
   background-color: #1e1e1e;
   color: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(59, 59, 59, 0.6);
-  transition: transform 0.3s ease;
-}
-
-.compare-card:hover {
-  transform: translateY(-5px);
-}
-
-.compare-card h3 {
-  color: #8F87F1;
-}
-
-.compare-card p {
-  margin: 8px 0;
-}
-
-.remove-btn {
-  background-color: #8F87F1;
-  color: white;
-  border: none;
-  padding: 10px 20px;
   border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #3c3c3c;
+}
+
+.comparison-table th {
+  background-color: #2c2c2c;
+  color: #8F87F1;
+  font-weight: 700;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: #252525;
+}
+
+.tech-stack-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tech-stack-list li {
+  background-color: black;
+  color: #8F87F1;
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.job-recommendation {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid #8F87F1;
+  color: white;
+  box-shadow: 0 4px 8px rgba(59, 59, 59, 0.3);
+}
+
+.job-recommendation h3 {
+  color: #8F87F1;
+  margin-bottom: 15px;
+}
+
+.recommendation-box {
+  background-color: #252525;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #8F87F1;
+  margin-top: 15px;
+}
+
+.recommendation-box h4 {
+  margin-top: 0;
+  color: #8F87F1;
+  font-weight: 700;
+}
+
+.common-tech-note {
+  font-size: 0.9em;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #3c3c3c;
+}
+
+.highlight-low {
+  background-color: #3c3c3c;
+  font-weight: bold;
+  color: rgb(27, 184, 27);
+}
+
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background-color: #2c2c2c;
+  color: #8F87F1;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+  font-family: "Geologica", sans-serif;
 }
 
-.remove-btn:hover {
-  background-color: #7A76D4;
+.back-button:hover {
+  transform: scale(1.05);
+  background-color: #3c3c3c;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .compare-grid {
-    grid-template-columns: 1fr;
+  .comparison-container {
+    padding: 15px;
+  }
+  
+  .comparison-table th, 
+  .comparison-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .job-recommendation {
+    padding: 15px;
+  }
+  
+  .comparison-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .back-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
-
-@media (max-width: 480px) {
-  h2 {
-    font-size: 2rem;
-  }
-} 
