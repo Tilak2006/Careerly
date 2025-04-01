@@ -2,21 +2,17 @@ import React, { useMemo } from 'react';
 import './Compare.css';
 
 const Compare = ({ jobs, onBackToJobs }) => {
-  // Find the job with minimum experience requirement
   const jobAnalysis = useMemo(() => {
     if (jobs.length < 2) return null;
     
-    // Find the job with minimum experience
     const minExperienceJob = [...jobs].sort((a, b) => 
       (a.reqExperience || 0) - (b.reqExperience || 0)
     )[0];
     
-    // Find the job with maximum experience
     const maxExperienceJob = [...jobs].sort((a, b) => 
       (b.reqExperience || 0) - (a.reqExperience || 0)
     )[0];
     
-    // Calculate average experience
     const avgExperience = jobs.reduce((sum, job) => 
       sum + (job.reqExperience || 0), 0) / jobs.length;
       
@@ -27,11 +23,9 @@ const Compare = ({ jobs, onBackToJobs }) => {
     };
   }, [jobs]);
 
-  // Function to determine which job is a better choice based on experience
   const getBetterJobRecommendation = () => {
     if (!jobAnalysis || jobs.length < 2) return null;
     
-    // Getting more information about the tech stacks for better recommendation
     const techStackCounts = {};
     
     jobs.forEach(job => {
@@ -43,7 +37,6 @@ const Compare = ({ jobs, onBackToJobs }) => {
       });
     });
     
-    // Get the most common technologies
     const commonTechs = Object.entries(techStackCounts)
       .filter(([_, count]) => count > 1)
       .map(([tech]) => tech);
@@ -94,10 +87,8 @@ const Compare = ({ jobs, onBackToJobs }) => {
         <>
           <h2>Job Comparison</h2>
           
-          {/* Recommendation section */}
           {getBetterJobRecommendation()}
           
-          {/* Side-by-side comparison table */}
           <div className="comparison-table">
             <table>
               <thead>
@@ -145,7 +136,6 @@ const Compare = ({ jobs, onBackToJobs }) => {
             </table>
           </div>
           
-          {/* Back button at the bottom */}
           <div className="back-button-container">
             <button 
               className="back-button" 
