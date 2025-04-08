@@ -96,7 +96,7 @@ const Jobs = ({ searchQuery, onClick }) => {
 
         return jobs.filter(job =>
             job.postProfile?.toLowerCase().includes(trimmedSearchQuery) ||
-            job.postDesc?.toLowerCase().includes(trimmedSearchQuery) ||
+            job.postDescription?.toLowerCase().includes(trimmedSearchQuery) ||
             job.postTechStack?.some(tech => tech?.toLowerCase().includes(trimmedSearchQuery))
         );
     }, [searchQuery, jobs]);
@@ -129,7 +129,7 @@ const Jobs = ({ searchQuery, onClick }) => {
                             <div className="jobs-card" key={job.postId}>
                                 <h3>{job.postProfile}</h3>
                                 <p><strong>Job-Id:</strong> {job.postId}</p>
-                                <p><strong>Description:</strong> {job.postDesc}</p>
+                                <p><strong>Description:</strong> {job.postDescription}</p>
                                 <p><strong>Experience Required:</strong> {job.reqExperience} years</p>
                                 <p><strong>Tech Stack Required:</strong></p>
                                 <ul className="jobs-tech-list">

@@ -23,17 +23,17 @@ const Post = () => {
     e.preventDefault();
     const jobData = {
       postProfile,
-      postDesc: postDescription,
+      postDescription: postDescription,
       reqExperience,
       postTechStack: techStack,
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/api/jobs', jobData);
-      alert(`Job Posted Successfully! Post ID: ${response.data.postId}`);
-      console.log('Response:', response.data);
+      console.log('Sending job data:', jobData);
+  const response = await axios.post('http://localhost:8080/api/jobs', jobData);
+  console.log('Response received:', response.data);
+  alert(`Job Posted Successfully! Post ID: ${response.data.postId}`);
 
-      // Clear Form
       setPostProfile('');
       setPostDescription('');
       setReqExperience(''); 

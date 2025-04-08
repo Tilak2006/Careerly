@@ -38,7 +38,7 @@ function App() {
           <>
             <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <Routes>
-              <Route path="/home" element={<Home isHiring={isHiring} />} />
+              <Route path="/home/*" element={<Home isHiring={isHiring} />} />
               <Route 
                 path="/jobs" 
                 element={<Jobs searchQuery={searchQuery} onSelectJob={handleSelectJob} />} 
